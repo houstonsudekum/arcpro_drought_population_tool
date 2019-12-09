@@ -5,3 +5,6 @@ I developed a tool to be implemented in the arcpro GUI that gets county level dr
 
 
 the jupyter notebook (.ipynb) gives a visual and lays out the architecture of the tool; the tool is found in the .tbx file and the script used for tool implementation is the .py file a sample of plots with latitude and longitude are found in the in_data folder and output is written to the out_data file
+
+
+The tool_setup file is a screenshot of the required input formatting that needs to be implemented so that the script can be run as a tool in the arcpro GUI interface
