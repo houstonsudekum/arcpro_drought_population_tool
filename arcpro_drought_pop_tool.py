@@ -55,12 +55,11 @@ plot_year = arcpy.GetParameterAsText(4)
 #"invyr"
 
 usename = arcpy.GetParameterAsText(5)
-#"hjs5td"
+
 passwrd = arcpy.GetParameterAsText(6)
-#"Hondoo12"
 
 key = arcpy.GetParameterAsText(7)
-#'a8240e46395d6100bb5585e555c6c5be99584107'
+
 
 # ## Step 3.
 # **create a geodatabase where we will store our data**
@@ -121,34 +120,6 @@ pr = arcpy.SpatialReference(102039)
 arcpy.XYTableToPoint_management(incsv,plots, x_field = longitude, y_field = latitude, coordinate_system = sr)
 
 
-# In[5]:
-
-
-## OR ##
-
-# plotgpd = pd.read_csv(incsv)
-
-# geometry = [Point(xy) for xy in zip(plotgpd[longitude], plotgpd[latitude])]
-# plotgpd = plotgpd.drop([longitude,latitude], axis=1)
-
-# # WGS_1984
-# crs = {'init': 'epsg:4326'}
-
-# # write GDF
-# gdf = gpd.GeoDataFrame(plotgpd, crs=crs, geometry=geometry)
-
-# # can write to a shapefile
-
-#path = os.path.join(workspace,"plot_test.shp")
-
-#gdf.to_file(path)
-
-
-# ## Step 5.
-# **create new feature class projected into equal area projection**
-
-# In[6]:
-
 
 plots_proj = 'plots_proj'
 
@@ -174,9 +145,7 @@ arcpy.Project_management(plots, plots_proj, pr, transformation, sr)
 
 # username and password of arcgis account
 
-# census key can be requested at : https://api.census.gov/data/key_signup.html 
-
-key = 'a8240e46395d6100bb5585e555c6c5be99584107'
+# census can be requested at : https://api.census.gov/data/key_signup.html 
 
 
 # ## Step 2. 
